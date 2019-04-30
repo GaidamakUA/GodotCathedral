@@ -1,0 +1,191 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://assets/BackgroundTileset.tres" type="TileSet" id=2]
+[ext_resource path="res://pieces/wood/Abbey.tscn" type="PackedScene" id=3]
+[ext_resource path="res://pieces/wood/Academy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://pieces/wood/Bridge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://pieces/wood/Castle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://pieces/wood/Infirmary.tscn" type="PackedScene" id=7]
+[ext_resource path="res://pieces/wood/Inn.tscn" type="PackedScene" id=8]
+[ext_resource path="res://pieces/wood/Manor.tscn" type="PackedScene" id=9]
+[ext_resource path="res://pieces/wood/Square.tscn" type="PackedScene" id=10]
+[ext_resource path="res://pieces/wood/Stable.tscn" type="PackedScene" id=11]
+[ext_resource path="res://pieces/wood/Tavern.tscn" type="PackedScene" id=12]
+[ext_resource path="res://pieces/wood/Tower.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/b_Restart.png" type="Texture" id=14]
+[ext_resource path="res://assets/Enchiridion.ttf" type="DynamicFontData" id=15]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 640, 640 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 200
+font_data = ExtResource( 15 )
+
+[node name="Game" type="Node2D"]
+scale = Vector2( 0.125, 0.125 )
+script = ExtResource( 1 )
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2( 1280, 640 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Field" type="TileMap" parent="Background"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 128, 128 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 1, 4, 0, 2, 4, 0, 3, 4, 0, 4, 4, 0, 5, 4, 0, 6, 4, 0, 7, 4, 0, 8, 4, 0, 9, 4, 0, 10, 4, 0, 11, 1, 0, 65536, 5, 0, 65537, 7, 0, 65538, 7, 0, 65539, 10, 0, 65540, 10, 0, 65541, 10, 0, 65542, 10, 0, 65543, 10, 0, 65544, 6, 0, 65545, 6, 0, 65546, 6, 0, 65547, 5, 0, 131072, 5, 0, 131073, 7, 0, 131074, 10, 0, 131075, 6, 0, 131076, 6, 0, 131077, 8, 0, 131078, 9, 0, 131079, 11, 0, 131080, 11, 0, 131081, 6, 0, 131082, 11, 0, 131083, 5, 0, 196608, 5, 0, 196609, 10, 0, 196610, 9, 0, 196611, 11, 0, 196612, 11, 0, 196613, 6, 0, 196614, 11, 0, 196615, 11, 0, 196616, 7, 0, 196617, 11, 0, 196618, 11, 0, 196619, 5, 0, 262144, 5, 0, 262145, 11, 0, 262146, 11, 0, 262147, 11, 0, 262148, 11, 0, 262149, 6, 0, 262150, 10, 0, 262151, 9, 0, 262152, 7, 0, 262153, 11, 0, 262154, 11, 0, 262155, 5, 0, 327680, 5, 0, 327681, 11, 0, 327682, 8, 0, 327683, 7, 0, 327684, 7, 0, 327685, 9, 0, 327686, 7, 0, 327687, 7, 0, 327688, 8, 0, 327689, 11, 0, 327690, 11, 0, 327691, 5, 0, 393216, 5, 0, 393217, 11, 0, 393218, 7, 0, 393219, 11, 0, 393220, 9, 0, 393221, 6, 0, 393222, 11, 0, 393223, 10, 0, 393224, 11, 0, 393225, 9, 0, 393226, 11, 0, 393227, 5, 0, 458752, 5, 0, 458753, 11, 0, 458754, 7, 0, 458755, 11, 0, 458756, 9, 0, 458757, 6, 0, 458758, 11, 0, 458759, 10, 0, 458760, 9, 0, 458761, 9, 0, 458762, 9, 0, 458763, 5, 0, 524288, 5, 0, 524289, 6, 0, 524290, 9, 0, 524291, 11, 0, 524292, 10, 0, 524293, 8, 0, 524294, 6, 0, 524295, 6, 0, 524296, 10, 0, 524297, 7, 0, 524298, 9, 0, 524299, 5, 0, 589824, 5, 0, 589825, 6, 0, 589826, 6, 0, 589827, 11, 0, 589828, 11, 0, 589829, 11, 0, 589830, 11, 0, 589831, 10, 0, 589832, 7, 0, 589833, 7, 0, 589834, 7, 0, 589835, 5, 0, 655360, 5, 0, 655361, 6, 0, 655362, 9, 0, 655363, 9, 0, 655364, 9, 0, 655365, 9, 0, 655366, 9, 0, 655367, 9, 0, 655368, 9, 0, 655369, 7, 0, 655370, 9, 0, 655371, 5, 0, 720896, 2, 0, 720897, 4, 0, 720898, 4, 0, 720899, 4, 0, 720900, 4, 0, 720901, 4, 0, 720902, 4, 0, 720903, 4, 0, 720904, 4, 0, 720905, 4, 0, 720906, 4, 0, 720907, 3, 0 )
+
+[node name="BoardArea" type="Area2D" parent="."]
+position = Vector2( 2048, 1408 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoardArea"]
+shape = SubResource( 1 )
+
+[node name="GameBoard" type="Node2D" parent="."]
+position = Vector2( 1472, 832 )
+
+[node name="Markers" type="Node2D" parent="."]
+position = Vector2( 1472, 832 )
+
+[node name="WhitePieces" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 320, 832 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Abbey" parent="WhitePieces" instance=ExtResource( 3 )]
+position = Vector2( 0, 768 )
+
+[node name="Academy" parent="WhitePieces" instance=ExtResource( 4 )]
+position = Vector2( 384, 512 )
+rotation = 3.14159
+
+[node name="Bridge" parent="WhitePieces" instance=ExtResource( 5 )]
+position = Vector2( 512, 0 )
+
+[node name="Castle" parent="WhitePieces" instance=ExtResource( 6 )]
+position = Vector2( 256, 1024 )
+rotation = -1.5708
+
+[node name="Infirmary" parent="WhitePieces" instance=ExtResource( 7 )]
+position = Vector2( 384, 896 )
+
+[node name="Inn" parent="WhitePieces" instance=ExtResource( 8 )]
+position = Vector2( 128, 384 )
+
+[node name="Inn2" parent="WhitePieces" instance=ExtResource( 8 )]
+position = Vector2( 128, 256 )
+rotation = 1.5708
+
+[node name="Manor" parent="WhitePieces" instance=ExtResource( 9 )]
+position = Vector2( 384, 640 )
+rotation = -1.5708
+
+[node name="Square" parent="WhitePieces" instance=ExtResource( 10 )]
+position = Vector2( 128, 0 )
+
+[node name="Stable" parent="WhitePieces" instance=ExtResource( 11 )]
+position = Vector2( 384, 0 )
+
+[node name="Stable2" parent="WhitePieces" instance=ExtResource( 11 )]
+
+[node name="Tavern" parent="WhitePieces" instance=ExtResource( 12 )]
+position = Vector2( 256, 640 )
+
+[node name="Tavern2" parent="WhitePieces" instance=ExtResource( 12 )]
+position = Vector2( 256, 384 )
+
+[node name="Tower" parent="WhitePieces" instance=ExtResource( 13 )]
+position = Vector2( 256, 768 )
+rotation = 1.5708
+
+[node name="BlackPieces" type="Node2D" parent="."]
+editor/display_folded = true
+position = Vector2( 3392, 832 )
+
+[node name="Abbey" parent="BlackPieces" instance=ExtResource( 3 )]
+position = Vector2( 384, 768 )
+scale = Vector2( -1, 1 )
+
+[node name="Academy" parent="BlackPieces" instance=ExtResource( 4 )]
+position = Vector2( 0, 512 )
+rotation = 3.14159
+scale = Vector2( -1, 1 )
+
+[node name="Bridge" parent="BlackPieces" instance=ExtResource( 5 )]
+position = Vector2( -128, 0 )
+
+[node name="Castle" parent="BlackPieces" instance=ExtResource( 6 )]
+position = Vector2( -128, 1024 )
+rotation = -1.5708
+
+[node name="Infirmary" parent="BlackPieces" instance=ExtResource( 7 )]
+position = Vector2( 0, 896 )
+
+[node name="Inn" parent="BlackPieces" instance=ExtResource( 8 )]
+position = Vector2( 128, 384 )
+
+[node name="Inn2" parent="BlackPieces" instance=ExtResource( 8 )]
+position = Vector2( 384, 384 )
+rotation = 3.14159
+
+[node name="Manor" parent="BlackPieces" instance=ExtResource( 9 )]
+position = Vector2( 0, 640 )
+rotation = 1.5708
+
+[node name="Square" parent="BlackPieces" instance=ExtResource( 10 )]
+position = Vector2( 128, 0 )
+
+[node name="Stable" parent="BlackPieces" instance=ExtResource( 11 )]
+position = Vector2( 384, 0 )
+
+[node name="Stable2" parent="BlackPieces" instance=ExtResource( 11 )]
+
+[node name="Tavern" parent="BlackPieces" instance=ExtResource( 12 )]
+position = Vector2( 128, 640 )
+
+[node name="Tavern2" parent="BlackPieces" instance=ExtResource( 12 )]
+position = Vector2( 256, 384 )
+
+[node name="Tower" parent="BlackPieces" instance=ExtResource( 13 )]
+position = Vector2( 384, 512 )
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="ClockwiseButton" type="TextureButton" parent="UI"]
+margin_left = 1664.0
+margin_top = 384.0
+margin_right = 1796.0
+margin_bottom = 511.0
+rect_scale = Vector2( -1, 1 )
+texture_normal = ExtResource( 14 )
+
+[node name="CounterclockwiseButton" type="TextureButton" parent="UI"]
+margin_left = 2432.0
+margin_top = 383.0
+margin_right = 2564.0
+margin_bottom = 510.0
+texture_normal = ExtResource( 14 )
+
+[node name="Label" type="Label" parent="UI"]
+margin_left = 1024.0
+margin_right = 3053.0
+margin_bottom = 242.0
+custom_fonts/font = SubResource( 2 )
+text = "The turn of the White"
+align = 1
+valign = 1
+
+[connection signal="input_event" from="BoardArea" to="." method="_on_BoardArea_input_event"]
+[connection signal="mouse_entered" from="BoardArea" to="." method="_on_BoardArea_mouse_entered"]
+[connection signal="mouse_exited" from="BoardArea" to="." method="_on_BoardArea_mouse_exited"]
+[connection signal="pressed" from="UI/ClockwiseButton" to="." method="_on_ClockwiseButton_pressed"]
+[connection signal="pressed" from="UI/CounterclockwiseButton" to="." method="_on_CounterclockwiseButton_pressed"]
